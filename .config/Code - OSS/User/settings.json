@@ -11,7 +11,7 @@
   "explorer.confirmDelete": false,
   "workbench.activityBar.location": "top",
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "prettier.prettier-vscode",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "explorer.confirmDragAndDrop": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
