@@ -146,7 +146,7 @@ alias maceth0='sudo ifconfig eth0 down && sudo macchanger -r eth0 && sudo ifconf
 alias ovp='sudo openvpn'
 alias dnsflush='sudo resolvectl flush-caches'
 alias own='sudo chown -R $USER:$GROUP'
-alias pk='pkill -f'
+alias pk='sudo pkill -f'
 alias pksysset='pkill -f systemsettings' # kill KDE settings app in case it gets stuck
 alias nvidia-watch='watch -n 0.5 nvidia-smi'
 alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg" # Arch
@@ -162,8 +162,8 @@ alias yt-mp3="yt-dlp --extract-audio --audio-format mp3 --add-metadata --embed-t
 alias yt-mp3-square="yt-dlp --extract-audio --audio-format mp3 --add-metadata --embed-thumbnail --ppa 'EmbedThumbnail+ffmpeg_o:-c:v mjpeg -vf crop=\"'\"'\"'if(gt(ih,iw),iw,ih)'\"':'\"'if(gt(iw,ih),ih,iw)'\"'\"'\"' -o \"%(title)s.%(ext)s\"" # Pass YT link in double quotes aka "https://..."
 alias yt-thumbnail="yt-dlp --skip-download --write-thumbnail --convert-thumbnails png -o \"%(title)s.%(ext)s\""
 alias yt-ordered-playlist="yt-dlp -o \"%(playlist_index)s %(title)s.%(ext)s\""
-alias yt-mp4='yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]"'
-alias yt='yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]"'
+alias yt-mp4='yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" --check-formats'
+alias yt='yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" --check-formats'
 alias cw="swww img --transition-type random"
 alias jinx='ollama run Jinx'
 alias stow-force='stow --adopt . && git reset --hard HEAD'
