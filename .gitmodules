@@ -1,0 +1,3 @@
+[submodule ".local/share/backgrounds"]
+  path = .local/share/backgrounds
+  url = https://github.com/imroux/roux-wallpapers.git
