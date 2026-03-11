@@ -1,0 +1,169 @@
+# Zinit plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
+zinit light zsh-users/zsh-history-substring-search
+zinit light jirutka/zsh-shift-select
+zinit light fdw/yazi-zoxide-zsh
+# zinit ice wait atload '_history_substring_search_config'
+
+# Add in snippets
+zinit snippet OMZL::git.zsh
+zinit snippet OMZP::git
+zinit snippet OMZP::sudo
+zinit snippet OMZP::archlinux
+zinit snippet OMZP::aws
+zinit snippet OMZP::kubectl
+zinit snippet OMZP::kubectx
+zinit snippet OMZP::command-not-found
+zinit snippet OMZP::aliases
+zinit snippet OMZP::copypath
+zinit snippet OMZP::copyfile
+zinit snippet OMZP::copybuffer
+zinit snippet OMZP::dirpersist
+zinit snippet OMZP::dirhistory
+zinit snippet OMZP::jsontools
+
+# Add envvars, aliases
+source ~/.config/zsh/zshvars
+source ~/.config/zsh/zshalias
+
+# Edit command buffer
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
+# Enable zmv for complex mv commands
+autoload zmv
+
+# Completion styling
+autoload -Uz compinit
+
+for dump in ~/.config/zsh/zcompdump(N.mh+24); do
+  compinit -d ~/.config/zsh/zcompdump
+done
+
+compinit -C -d ~/.config/zsh/zcompdump
+
+zinit cdreplay -q
+
+zstyle ':completion:*' verbose true
+# zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} 'ma=48;5;197;1'
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*:warnings' format "%B%F{red}No matches for:%f %F{magenta}%d%b"
+zstyle ':completion:*:descriptions' format '%F{yellow}[-- %d --]%f'
+zstyle ':vcs_info:*' formats ' %B%s-[%F{magenta}%f %F{yellow}%b%f]-'
+
+# History
+if [ ! -d "~/.config/zsh/zhistory" ] ;
+  then touch ~/.config/zsh/zhistory
+fi
+
+HISTFILE=~/.config/zsh/zhistory
+HISTSIZE=20000
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+###############################################################################
+#                              ZSH COOL OPTIONS                               #
+###############################################################################
+setopt AUTOCD                 # change directory just by typing its name
+setopt PROMPT_SUBST           # enable command substitution in prompt
+setopt MENU_COMPLETE          # Automatically highlight first element of completion menu
+# setopt LIST_PACKED          # The completion menu takes less space.
+# setopt AUTO_LIST            # Automatically list choices on ambiguous completion.
+# setopt HIST_IGNORE_DUPS     # Do not write events to history that are duplicates of previous events
+# setopt HIST_FIND_NO_DUPS    # When searching history don't display results already cycled through twice
+setopt COMPLETE_IN_WORD       # Complete from both ends of a word.
+setopt NULL_GLOB              # Make * wildcard work like in bash
+
+# Keybindings
+bindkey -e # Switch to emacs style keybinds
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey '^u' backward-kill-line # Remove line before cursor
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
+bindkey '^[[3~' delete-char
+bindkey "\E[1~" beginning-of-line
+bindkey "\E[4~" end-of-line
+
+# Ctrl+Space to expand aliases
+my-expand() { zle _expand_alias || zle .expand-word || true; }
+zle -N my-expand
+bindkey '^ ' my-expand
+
+# Change terminals title
+function xterm_title_precmd () {
+  print -Pn -- '\e]2;%n@%m %~\a'
+  [[ "$TERM" == 'screen'* ]] && print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-}\e\\'
+}
+
+function xterm_title_preexec () {
+  print -Pn -- '\e]2;%n@%m %~ %# ' && print -n -- "${(q)1}\a"
+  [[ "$TERM" == 'screen'* ]] && { print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-} %# ' && print -n -- "${(q)1}\e\\"; }
+}
+
+if [[ "$TERM" == (kitty*|alacritty*|ghostty*|termite*|gnome*|konsole*|kterm*|putty*|rxvt*|screen*|tmux*|xterm*) ]]; then
+  add-zsh-hook -Uz precmd xterm_title_precmd
+  add-zsh-hook -Uz preexec xterm_title_preexec
+fi
+
+# Shell integrations
+eval "$(starship init zsh)"
+eval "$(fzf --zsh)"
+eval "$(zoxide init --cmd cd zsh)"
+
+# OSC 7: Enable foot terminal to open new windows in current directory
+function osc7-pwd() {
+  emulate -L zsh # also sets localoptions for us
+  setopt extendedglob
+  local LC_ALL=C
+  printf '\e]7;file://%s%s\e\' $HOST ${PWD//(#m)([^@-Za-z&-;_~])/%${(l:2::0:)$(([##16]#MATCH))}}
+}
+
+function chpwd-osc7-pwd() {
+  (( ZSH_SUBSHELL )) || osc7-pwd
+}
+add-zsh-hook -Uz chpwd chpwd-osc7-pwd
+
+# OSC 133: Enable jumping between prompts in foot terminal (with ctrl+shift+z and ctrl+shift+x by default)
+precmd() {
+  print -Pn "\e]133;A\e\\"
+}
+
+## Add precmd and preexec hooks (piping last command's output)
+function precmd {
+  if ! builtin zle; then
+    print -n "\e]133;D\e\\"
+  fi
+}
+
+function preexec {
+    print -n "\e]133;C\e\\"
+}
+
+# Change directory on quitting Yazi
+# Start Yazi with y, quit and cd with q, just quit with Q
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}

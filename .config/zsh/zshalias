@@ -1,0 +1,274 @@
+# Paths
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias cdd='cd ~/Downloads'
+alias cda='cd ~/Data/AI_Tools'
+alias cdcomfy='cd ~/Data/AI_Tools/ComfyUI'
+alias cdc='cd ~/Data/Code'
+alias cdmy='cd ~/Data/My'
+alias cdman='cd ~/Data/My/Manuals'
+alias cdnotes='cd ~/Data/My/Notes'
+
+# Git
+alias got='git'
+alias gut='git'
+
+alias gs='git status'
+alias ga='git add'
+alias gb='git branch'
+alias gf='git fetch'
+alias gfc='git fetch && git checkout origin/master'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias gcane='git commit --amend --no-edit'
+alias gd='git diff'
+alias gco='git checkout'
+alias gpsh='git push'
+alias gpshom='git push -u origin master'
+alias gp='git pull'
+alias gr='git rebase'
+alias grc='git rebase --continue'
+alias gra='git rebase --abort'
+alias gm='git merge'
+alias gmc='git merge --continue'
+alias gma='git merge --abort'
+alias gst='git stash'
+alias gstp='git stash pop'
+alias gcl='git clone --depth 1'
+alias gclfull='git clone'
+alias grema='git remote add origin'
+alias gremv='git remote -v'
+alias grems='git remote set-url'
+alias gremso='git remote set-url origin'
+alias glfsverifyfalse='git config --global http.sslVerify false'
+alias gsuir='git submodule update --init --recursive'
+alias glistfiles='git diff-tree --no-commit-id --name-only -r' # List files affected by commmit (pass commit hash or branch name)
+alias gres='git reset --hard'
+alias gtree='git log -30 --oneline --graph'
+alias gtreefull='git log --all --oneline --graph'
+# alias gtreefull='git log --all --oneline --graph --pretty="%C(bold blue)%h" --decorate'
+alias gl1='git log -1'
+alias gl2='git log -2'
+alias gl3='git log -3'
+
+alias lz='lazygit'
+
+# WebDev
+alias nom='npm'
+alias nim='npm'
+
+alias ncr='npm create-react-app'
+alias ns='npm start'
+alias nrd='npm run dev'
+
+alias pncr='npx create-next-app@latest --use-pnpm'
+alias pns='pnpm start'
+alias pnrd="NODE_OPTIONS='--no-webstorage' pnpm dev"
+alias pnrb='pnpm run build'
+
+alias denc='deno run -A npm:create-next-app@latest'
+alias dens='deno task dev'
+alias deni='deno install --allow-scripts=npm:sharp,npm:unrs-resolver'
+
+alias bunc='bun create next-app@latest'
+alias bunrd='bun --bun run dev'
+alias buni='bun i'
+alias buna='bun a'
+
+# Pacman
+# alias aptu='paru -Syu --disable-download-timeout --nocombinedupgrade' # update package lists and upgrade all packages
+# alias apti='paru -Sy --needed --disable-download-timeout' # install packages
+# alias apts='paru --bottomup --disable-download-timeout' # search for a package (intersection of all words if multiple suplied). Promts to install a package as well
+# alias aptsg='paru -Sg' # lookup all packages belonging to a group
+# alias aptr='paru -Rns --noconfirm' # remove packages
+# alias aptrr='paru -Rnusc --noconfirm' # remove packages with all dependencies and packages that depend on the current one
+# alias aptq='paru -Q | rg' # search among installed packages
+# alias aptqq='paru -Qq | rg' # search among installed packages without package versions
+# alias aptrq='paru -R $(paru -Qdtq)' # remove all packages that don't depend on any other
+# alias aptsc='paru -Scc' # Clean cache and databases
+# alias aptfix='sudo rm /var/lib/pacman/db.lck' # Removes pacman lock
+
+alias aptu='yay -Syu --disable-download-timeout' # update package lists and upgrade all packages
+alias apti='yay -Sy --needed --disable-download-timeout' # install packages
+alias apts='yay --disable-download-timeout' # search for a package (intersection of all words if multiple suplied). Promts to install a package as well
+alias aptsg='yay -Sg' # lookup all packages belonging to a group
+alias aptr='yay -Rns --noconfirm' # remove packages
+alias aptrr='yay -Rnusc --noconfirm' # remove packages with all dependencies and packages that depend on the current one
+alias aptq='yay -Q | rg' # search among installed packages
+alias aptqq='yay -Qq | rg' # search among installed packages without package versions
+alias aptrq='yay -R $(yay -Qdtq)' # remove all packages that don't depend on any other
+alias aptsc='yay -Scc' # Clean cache and databases
+alias aptfix='sudo rm /var/lib/pacman/db.lck' # Removes pacman lock
+
+# alias aptu='sudo pacman -Syu --disable-download-timeout --nocombinedupgrade' # update package lists and upgrade all packages
+# alias apti='sudo pacman -Sy --needed --disable-download-timeout' # install packages
+# alias apts='pacman -Ss --disable-download-timeout' # search for a package (intersection of all words if multiple suplied). Promts to install a package as well
+# alias aptsg='pacman -Sg' # lookup all packages belonging to a group
+# alias aptr='sudo pacman -Rns --noconfirm' # remove packages
+# alias aptrr='sudo pacman -Rnusc --noconfirm' # remove packages with all dependencies and packages that depend on the current one
+# alias aptq='pacman -Q | rg' # search among installed packages
+# alias aptqq='pacman -Qq | rg' # search among installed packages without package versions
+# alias aptrq='sudo pacman -R $(pacman -Qdtq)' # remove all packages that don't depend on any other
+# alias aptsc='sudo pacman -Scc' # Clean cache and databases
+# alias aptfix='sudo rm /var/lib/pacman/db.lck' # Removes pacman lock
+
+# DNF 5
+# alias aptu='sudo dnf upgrade' # upgrade all packages on the system to the latest version (if particular package name supplie, only thta package will be upgraded)
+# alias apti='sudo dnf install -y' # install packages
+# alias apts='dnf search' # search for a package
+# alias aptr='sudo dnf remove -y' # remove a package
+# alias aptc='sudo dnf check-update' # check for updates in all enabled repos
+# alias aptq='dnf repoquery --userinstalled | rg' # search among installed packages
+
+# Bash/Zsh
+alias bashconfig='nvim ~/.bashrc'
+alias bashupd='. ~/.bashrc'
+
+alias zshconfig='nvim ~/.config/zsh'
+alias zshupd='. ~/.zshrc'
+
+# Miscellaneous
+alias ls='lsd -a --group-directories-first'
+alias ll='lsd -la --group-directories-first'
+
+alias ovp='sudo openvpn'
+alias dnsflush='sudo resolvectl flush-caches'
+alias own='sudo chown -R $USER:$GROUP'
+alias pk='sudo pkill -f'
+alias pksysset='pkill -f systemsettings' # kill KDE settings app in case it gets stuck
+alias nvidia-watch='watch -n 0.5 nvidia-smi'
+alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg" # Arch
+# alias grub-update="sudo grub2-mkconfig -o /boot/grub2/grub.cfg" # Fedora
+alias mirrors-rank="sudo reflector --verbose --latest 5 --country 'Sweden' --age 6 --sort rate --save /etc/pacman.d/mirrorlist"
+alias gpu-driver-check="lspci -nnk | egrep -i --color 'vga|3d|2d' -A3"
+alias touchpad-fix='xinput set-prop "ELAN0711:00 04F3:30EB Touchpad" "libinput Tapping Enabled" 1'
+# alias root-snapshot='sudo btrfs subvolume snapshot / /.snapshots/@-$(date +"%Y-%m-%d--%H:%M:%S") && sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias root-snapshot='sudo btrfs subvolume snapshot / /.snapshots/@-$(date +"%Y-%m-%d--%H:%M:%S")' # if not using grub
+alias v='nvim'
+alias sudov='sudo nvim'
+alias yt-mp3="yt-dlp --extract-audio --audio-format mp3 --add-metadata --embed-thumbnail -o \"%(title)s.%(ext)s\"" # Pass YT link in double quotes aka "https://..."
+alias yt-mp3-square="yt-dlp --extract-audio --audio-format mp3 --add-metadata --embed-thumbnail --ppa 'EmbedThumbnail+ffmpeg_o:-c:v mjpeg -vf crop=\"'\"'\"'if(gt(ih,iw),iw,ih)'\"':'\"'if(gt(iw,ih),ih,iw)'\"'\"'\"' -o \"%(title)s.%(ext)s\"" # Pass YT link in double quotes aka "https://..."
+alias yt-thumbnail="yt-dlp --skip-download --write-thumbnail --convert-thumbnails png -o \"%(title)s.%(ext)s\""
+alias yt-ordered-playlist="yt-dlp -o \"%(playlist_index)s %(title)s.%(ext)s\""
+alias yt-mp4='yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" --check-formats'
+alias yt='yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" --check-formats'
+alias cw="swww img --transition-type random"
+alias jinx='ollama run Jinx'
+alias play-noise="play -nq synth 300 sin 20 gain -10"
+
+# Change wallpaper and apply matugen theme based on its colors
+# cw-theme() {
+#   swww img --transition-type random "$1"
+#   matugen image "$1" --verbose --show-colors
+# }
+
+# Force stow current folder into target directory. Current folder must be a git repo
+stow-force() {
+  stow --adopt . -t $1 && git reset --hard HEAD
+}
+
+# Convert image to favicon.ico
+favicon() {
+  magick -background transparent "$1" -define icon:auto-resize=$2 "favicon.ico"
+}
+
+# VirusTotal
+alias vts='vt scan file'
+alias vta='vt analysis'
+## VT scan file and get analysis
+vtaf() {
+  vt analysis $(vt scan file "$1" | cut -d ' ' -f 2)
+}
+
+# Password Generator of len X
+passgen() {
+  cat /dev/urandom | tr -dc 'A-Za-z0-9!"#$%&'\''()*+,-./:;<=>?@[\]^_`{|}~' | head -c $1 ; echo
+}
+
+# Set HP keyboard to green
+hp-keyboard-green() {
+  sudo bash -c 'echo 00FF00 > /sys/devices/platform/hp-wmi/rgb_zones/zone00'
+  sudo bash -c 'echo 00FF00 > /sys/devices/platform/hp-wmi/rgb_zones/zone01'
+  sudo bash -c 'echo 00FF00 > /sys/devices/platform/hp-wmi/rgb_zones/zone02'
+  sudo bash -c 'echo 00FF00 > /sys/devices/platform/hp-wmi/rgb_zones/zone03'
+}
+
+hp-keyboard-red() {
+  sudo bash -c 'echo FF0000 > /sys/devices/platform/hp-wmi/rgb_zones/zone00'
+  sudo bash -c 'echo FF0000 > /sys/devices/platform/hp-wmi/rgb_zones/zone01'
+  sudo bash -c 'echo FF0000 > /sys/devices/platform/hp-wmi/rgb_zones/zone02'
+  sudo bash -c 'echo FF0000 > /sys/devices/platform/hp-wmi/rgb_zones/zone03'
+}
+
+# Universal unzip
+ex ()
+{
+  if [ -f "$1" ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   unzstd $1    ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+# Network
+alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -"
+alias extip="curl icanhazip.com"
+alias ip="curl ipinfo.io"
+
+alias mac0='sudo ifconfig wlan0 down && sudo macchanger -r wlan0 && sudo ifconfig wlan0 up'
+alias mac1='sudo ifconfig wlan1 down && sudo macchanger -r wlan1 && sudo ifconfig wlan1 up'
+alias maceth0='sudo ifconfig eth0 down && sudo macchanger -r eth0 && sudo ifconfig eth0 up'
+
+# Python
+alias py='python'
+alias flake8='python3 -m flake8'
+
+## UV
+alias pyinst='uv python install' # list python versions to install (e.g. uv python install 3.11 3.12)
+alias ppi='uv pip install'
+alias ppir='uv pip install -r requirements.txt'
+alias ppu='uv pip uninstall'
+alias ppur='uv pip uninstall -r requirements.txt'
+alias ppf='uv pip freeze'
+alias ppfr='uv pip freeze > requirements.txt'
+alias pvc='uv venv' # Create local environment (pass '--python 3.12' for specific python version)
+alias pva='source ./.venv/bin/activate'
+alias pvd='deactivate' # Deactivate python environment
+
+## PIP
+# alias ppi='python -m pip install'
+# alias ppir='cat requirements.txt | xargs -n 1 python -m pip install'
+# alias ppu='python -m pip uninstall -y'
+# alias ppur='python -m pip uninstall -r requirements.txt -y'
+# alias ppf='python -m pip freeze'
+# alias ppfr='python -m pip freeze > requirements.txt'
+# alias ppup='python -m pip install --upgrade pip'
+
+## Virtual Environments
+# alias pvc='python -m venv venv'
+# alias pva='. ./venv/bin/activate'
+# alias pvd='deactivate'
+# alias pvc='mkdir .venv && pipenv --python' # Create local environment (pass python version at the end)
+# alias pva='pipenv shell' # Activate environment in the current directory
+# alias pvd='exit' # Deactivate python environment
+
+# alias conc='conda create -n'
+# alias cona='conda activate'
+# alias cond='conda deactivate'
+# alias coni='conda info --envs' # list all conda environments
