@@ -6,6 +6,7 @@
   "editor.fontFamily": "'Hack', 'monospace', monospace",
   "editor.rulers": [80, 120],
   "editor.tabSize": 2,
+  "editor.renderWhitespace": "trailing",
   "git.openRepositoryInParentFolders": "never",
   "editor.fontSize": 16,
   "explorer.confirmDelete": false,
