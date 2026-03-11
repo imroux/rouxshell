@@ -1,0 +1,67 @@
+add_newline = false
+
+format = """\
+$time$cmd_duration$username\
+[](fg:color2 bg:color4)\
+$directory\
+[](fg:color4 bg:color6)\
+$git_branch\
+$git_status\
+[](fg:color6 bg:color8)\
+$python\
+[](fg:color8)\
+$character\
+"""
+
+palette = 'colors'
+
+[palettes.colors]
+color1 = '#00344f'
+color2 = '#97ccf8'
+color3 = '#cbe6ff'
+color4 = '#004b71'
+color5 = '#22323f'
+color6 = '#b8c8d9'
+color7 = '#d4e4f6'
+color8 = '#394956'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+format = '[ 󱑍 $time ](fg:color1 bg:color2)'
+
+[cmd_duration]
+min_time = 3000
+format = "[󱑎 $duration ](fg:color1 bg:color2)"
+
+[username]
+format = '[$user ](fg:color1 bg:color2)'
+
+[directory]
+format = "[ $path ](fg:color3 bg:color4)"
+
+[git_branch]
+format = '[ $symbol$branch(:$remote_branch) ](fg:color5 bg:color6)'
+symbol = "  "
+
+[git_status]
+format = '[$all_status ](fg:color5 bg:color6)'
+
+[git_metrics]
+format = "([+$added ]($added_style))[]($added_style)"
+added_style = "fg:color5 bg:color6"
+deleted_style = "fg:color5 bg:color6"
+disabled = false
+
+[hg_branch]
+format = "[ $symbol$branch ]"
+symbol = " "
+
+[python]
+# Show python version and virtual environment name
+python_binary = ["python3", "python"]
+format = "[ (${virtualenv}) ](fg:color7 bg:color8)"
+
+[character]
+success_symbol = '[](color1 bold)'
+error_symbol = '[ ✗](#ffb4ab bold)'
