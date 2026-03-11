@@ -1,0 +1,44 @@
+# The syntax is "key = value". The whitespace around the
+# equals doesn't matter.
+theme = "Matugen"
+background-opacity = 0.7
+background-blur = true
+cursor-opacity = 0.95
+
+# Comments start with a `#` and are only valid on their own line.
+# Blank lines are ignored!
+
+keybind = ctrl+v=paste_from_clipboard
+keybind = ctrl+t=new_tab
+keybind = alt+t=new_tab
+keybind = alt+r=new_split:right
+keybind = alt+d=new_split:down
+keybind = alt+q=close_surface
+keybind = alt+w=close_surface
+keybind = ctrl+w=close_surface
+keybind = alt+h=goto_split:left
+keybind = alt+l=goto_split:right
+keybind = alt+k=goto_split:top
+keybind = alt+j=goto_split:bottom
+keybind = alt+tab=next_tab
+keybind = alt+ctrl+tab=previous_tab
+
+# Empty values reset the configuration to the default value
+font-family = "Hack Nerd Font Mono"
+font-size = 16
+
+cursor-style = bar
+cursor-style-blink = true
+
+window-padding-x = 10
+window-padding-y = 10
+
+clipboard-read = allow
+clipboard-write = allow
+copy-on-select = clipboard
+
+confirm-close-surface = false
+
+mouse-shift-capture = true
+
+app-notifications = no-clipboard-copy
