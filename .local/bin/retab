@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Recursively find all files in the current directory and normalize
+# their whitespace indentation (tabs/spaces) by opening each one in Neovim,
+# executing ':retab', and saving the changes.
+#
+
+for file in $(find . -name "*"); do
+  if [ -f $file ]; then
+    echo $file
+    nvim -c 'retab' -c 'wq' "$file"
+  fi
+done

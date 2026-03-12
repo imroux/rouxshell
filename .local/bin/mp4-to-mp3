@@ -1,0 +1,52 @@
+#!/bin/bash
+#
+# Convert all .mp4 files inside the current directory into .mp3 files
+# which will be placed under output/ folder
+#
+
+# Create output directory
+mkdir -p output
+
+# Array to track files created by this script
+declare -a processed_bases
+
+# 1. Extract audio and images from MP4s
+for i in *.mp4; do
+  # Safety check: ensure the file actually exists (handles case where no .mp4s are found)
+  [ -f "$i" ] || continue
+
+  base="$(basename "$i" .mp4)"
+
+  # Extract thumbnail
+  ffmpeg -y -i "$i" -ss 10 -vframes 1 "${base}.jpg"
+
+  # Extract audio
+  ffmpeg -y -i "$i" -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 "${base}.mp3"
+
+  # Add this base name to our tracking list
+  processed_bases+=("$base")
+done
+
+# 2. Combine audio + image and cleanup
+for base in "${processed_bases[@]}"; do
+  mp3_file="${base}.mp3"
+  jpg_file="${base}.jpg"
+  output_file="output/${mp3_file}"
+
+  # Check if intermediate files exist before proceeding
+  if [ -f "$mp3_file" ] && [ -f "$jpg_file" ]; then
+    echo "Processing ${base}..."
+
+    # Combine audio and image into MP3 with embedded art
+    # -c:v mjpeg ensures the image is stored as compatible album art
+    if ffmpeg -y -i "$mp3_file" -i "$jpg_file" -map 0 -map 1 -c copy -c:v mjpeg -metadata:s:v title="Album cover" "$output_file"; then
+
+      # ONLY delete source files if output was created successfully
+      rm "$mp3_file"
+      rm "$jpg_file"
+      echo "Moved ${base} to output/ and cleaned up intermediates."
+    else
+      echo "Error: Failed to create output for ${base}. Keeping intermediates."
+    fi
+  fi
+done

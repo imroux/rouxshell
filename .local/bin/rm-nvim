@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# Perform a hard reset of Neovim by removing all cache, state,
+# and shared data directories. It clears installed plugins and persistent
+# state without affecting the actual configuration files.
+#
+
+rm -rf ~/.cache/nvim
+rm -rf ~/.local/state/nvim
+rm -rf ~/.local/share/nvim

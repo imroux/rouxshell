@@ -1,0 +1,36 @@
+#!/bin/bash
+#
+# Install dependencies for each custom node of ComfyUI using 'uv'.
+# Start ComfyUI.
+#
+
+install_dependencies() {
+  local dir="$1"
+
+  # Change into the directory
+  cd "$dir" || {
+    echo "Failed to enter $dir"
+    exit 1
+  }
+
+  # Check if 'uv pip install -r requirements.txt' command is available and execute it
+  if command -v $(uv pip install -r requirements.txt) &>/dev/null; then
+    echo "Executing 'uv pip install -r requirements.txt' in $dir..."
+    uv pip install -r requirements.txt
+  else
+    echo "'uv pip install -r requirements.txt' command not found in $dir."
+  fi
+}
+
+comfy_dir="$HOME/Data/AI_Tools/ComfyUI"
+
+source "$comfy_dir/.venv/bin/activate"
+cd $comfy_dir
+
+for dir in "$comfy_dir/custom_nodes/*"; do
+    if [ -d "$dir" ]; then  # Ensure it's a directory
+        install_dependencies "$dir"
+    fi
+done
+
+uv run "$comfy_dir/main.py" --lowvram --disable-smart-memory

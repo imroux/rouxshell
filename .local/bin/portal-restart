@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#
+# Restart XDG portal services for Wayland to fix issues like screen sharing
+# or file picker dialogs in sandboxed applications.
+#
+
+sleep 4
+killall -e xdg-desktop-portal-wlr
+killall xdg-desktop-portal
+/usr/lib/xdg-desktop-portal-wlr &
+sleep 4
+/usr/lib/xdg-desktop-portal &

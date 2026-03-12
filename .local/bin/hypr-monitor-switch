@@ -1,0 +1,34 @@
+#!/bin/bash
+#
+# Switch Hyprland monitors config between
+# monitors-1.conf and monitors-2.conf
+#
+
+# get number of connected monitors
+# gmonitors=$(hyprctl monitors | grep -c "Monitor")
+
+config_dir="$HOME/.config/hypr/conf"
+
+# if [ "$gmonitors" -eq 1 ]; then
+#   cp "$config_dir/monitors-1.conf" "$config_dir/monitors.conf"
+#   cp "$config_dir/monitors-1.conf" "$config_dir/monitors.conf"
+#   echo "Activated single monitor config"
+# elif [ "$gmonitors" -eq 2 ]; then
+#   cp "$config_dir/monitors-2.conf" "$config_dir/monitors.conf"
+#   cp "$config_dir/monitors-2.conf" "$config_dir/monitors.conf"
+#   echo "Activated dual monitor config"
+# else
+#   echo "Unsupported monitor count: $gmonitors"
+# fi
+
+if [ "$(cmp $config_dir/monitors.conf $config_dir/monitors-1.conf)" ]; then
+  cp "$config_dir/monitors-1.conf" "$config_dir/monitors.conf"
+  # cp "$config_dir/monitors-1.conf" "$config_dir/monitors.conf"
+  echo "Activated single monitor config"
+elif [ "$(cmp $config_dir/monitors.conf $config_dir/monitors-2.conf)" ]; then
+  cp "$config_dir/monitors-2.conf" "$config_dir/monitors.conf"
+  # cp "$config_dir/monitors-2.conf" "$config_dir/monitors.conf"
+  echo "Activated dual monitor config"
+else
+  echo "Unsupported monitor count: $gmonitors"
+fi
