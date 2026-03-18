@@ -20,5 +20,8 @@ Places Icons Static Size=22
 [MainWindow]
 MenuBar=Disabled
 
+[Notification Messages]
+ConfirmRenameFileType=false
+
 [PreviewSettings]
 Plugins=appimagethumbnail,audiothumbnail,glycin-heif,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,heif,imagethumbnail,glycin-image-rs,jpegthumbnail,glycin-jxl,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,gsf-office,opendocumentthumbnail,glycin-svg,svgthumbnail,textthumbnail,gnome-font-viewer,ffmpegthumbs
