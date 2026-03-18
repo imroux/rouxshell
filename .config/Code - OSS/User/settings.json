@@ -24,4 +24,7 @@
   "telemetry.telemetryLevel": "off",
   "telemetry.editStats.enabled": false,
   "telemetry.feedback.enabled": false,
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "claudeCode.preferredLocation": "panel",
 }
