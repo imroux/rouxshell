@@ -86,3 +86,11 @@ vim.tbl_islist = vim.islist
 
 -- Transparent background
 vim.api.nvim_set_hl(0, "Normal", { bg = "none", ctermbg = "none" })
+
+-- Line numbers color applied after colorscheme
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+--   pattern = "*",
+--   callback = function()
+--     vim.api.nvim_set_hl(0, "LineNr", { fg = "#9caec0" })
+--   end,
+-- })
