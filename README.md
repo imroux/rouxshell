@@ -3,6 +3,12 @@
 <div align="center">
   This repo is a cozy home for scripts and configurations (aka .dotfiles) on my Linux setup. All tools are open-source and freely available, allowing you to use, modify, and share them as you like.
 </div>
+<br>
+
+> 📝 NOTE: master branch corresponds to matugen version of the dotfiles. For
+> catppuccin version refer to corresponding
+> [catppuccin](https://github.com/imroux/rouxshell/tree/catppuccin) branch of
+> this repo.
 
 # Showcase
 
@@ -74,4 +80,3 @@ tremendous work as well as direct and indirect contributions to this project:
 - [mierak](https://github.com/mierak) for making a great TUI music player
   [rmpc](https://github.com/mierak/rmpc) and a multitude of helpful suggestions
   in setting up my config files for the player.
-
