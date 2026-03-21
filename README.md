@@ -1,7 +1,7 @@
 # About
 
 <div align="center">
-  This repo is a cozy home for scripts and configurations (aka .dotfiles) on my Linux setup. All tools are open-source and freely available, allowing you to use, modify, and share them as you like.
+  (WIP) This repo is a cozy home for scripts and configurations (aka .dotfiles) on my Linux setup. All tools are open-source and freely available, allowing you to use, modify, and share them as you like.
 </div>
 <br>
 
@@ -30,22 +30,22 @@
 
 # Featured Software
 
-|                   |                                                                                                                              |                                               |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| WM                | [Hyprland](https://github.com/hyprwm/Hyprland)                                                                               |                                               |
-| Bar               | [Quickshell](https://quickshell.org/)                                                                                        |                                               |
-| File Manager      | [Yazi](https://github.com/sxyazi/yazi)                                                                                       | [Dolphin](https://github.com/KDE/dolphin)     |
-| Music Player      | [RMPC](https://github.com/mierak/rmpc) + [MPD](https://github.com/MusicPlayerDaemon/MPD)                                     |                                               |
-| Editor            | [Neovim](https://github.com/neovim/neovim)                                                                                   | [VSCode](https://github.com/microsoft/vscode) |
-| Terminal          | [Ghostty](https://github.com/ghostty-org/ghostty)                                                                            | [Kitty](https://github.com/kovidgoyal/kitty)  |
-| Shell             | Zsh + <br> [Zinit Plugin Manager](https://github.com/zdharma-continuum/zinit) + <br> [Starship Prompt](https://starship.rs/) |                                               |
-| Lockscreen        | hyprlock                                                                                                                     |                                               |
-| Wallpaper Manager | [SWWW](https://github.com/LGFae/swww)                                                                                        |                                               |
-| Wallpapers        | [Link](https://github.com/somanoir/noir-wallpapers)                                                                          |                                               |
-| Font              | [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file)                                                 |                                               |
-| App Theme         | [Matugen](https://github.com/InioX/matugen) + [adw-gtk3](https://github.com/lassekongo83/adw-gtk3)                           |                                               |
-| Cursor Theme      | [Bibata](https://github.com/ful1e5/Bibata_Cursor)                                                                            |                                               |
-| Icon Theme        | [Tela-circle](https://github.com/vinceliuice/Tela-circle-icon-theme)                                                         |                                               |
+|                   |                                                                                                                              |                                                   |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| WM                | [Hyprland](https://github.com/hyprwm/Hyprland)                                                                               |                                                   |
+| Bar + Widgets     | [Quickshell](https://quickshell.org/)                                                                                        |                                                   |
+| File Manager      | [Yazi](https://github.com/sxyazi/yazi)                                                                                       | [Dolphin](https://github.com/KDE/dolphin)         |
+| Music Player      | [RMPC](https://github.com/mierak/rmpc) + [MPD](https://github.com/MusicPlayerDaemon/MPD)                                     |                                                   |
+| Editor            | [Neovim](https://github.com/neovim/neovim)                                                                                   | [VSCode](https://github.com/microsoft/vscode)     |
+| Terminal          | [Kitty](https://github.com/kovidgoyal/kitty)                                                                                 | [Ghostty](https://github.com/ghostty-org/ghostty) |
+| Shell             | Zsh + <br> [Zinit Plugin Manager](https://github.com/zdharma-continuum/zinit) + <br> [Starship Prompt](https://starship.rs/) |                                                   |
+| Lockscreen        | hyprlock                                                                                                                     |                                                   |
+| Wallpaper Manager | [SWWW](https://github.com/LGFae/swww)                                                                                        |                                                   |
+| Wallpapers        | [Link](https://github.com/somanoir/noir-wallpapers)                                                                          |                                                   |
+| Font              | [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file)                                                 |                                                   |
+| App Theme         | [Matugen](https://github.com/InioX/matugen) + [adw-gtk3](https://github.com/lassekongo83/adw-gtk3)                           |                                                   |
+| Cursor Theme      | [Bibata](https://github.com/ful1e5/Bibata_Cursor)                                                                            |                                                   |
+| Icon Theme        | [Tela-circle](https://github.com/vinceliuice/Tela-circle-icon-theme)                                                         |                                                   |
 
 # Installation
 
