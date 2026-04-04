@@ -154,7 +154,7 @@ alias yt-mp4='yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" --check-formats'
 alias yt='yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" --check-formats'
 alias cw="swww img --transition-type random"
 alias jinx='ollama run Jinx'
-alias play-noise="play -nq synth 300 sin 20 gain -10"
+alias play-noise="play -nq synth 3600 sin 20 gain -10"
 
 # Change wallpaper and apply matugen theme based on its colors
 # cw-theme() {
