@@ -27,4 +27,5 @@
   "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.iconTheme": "catppuccin-mocha",
   "claudeCode.preferredLocation": "panel",
+  "files.trimTrailingWhitespace": true,
 }
