@@ -152,13 +152,13 @@ alias yt-thumbnail="yt-dlp --skip-download --write-thumbnail --convert-thumbnail
 alias yt-ordered-playlist="yt-dlp -o \"%(playlist_index)s %(title)s.%(ext)s\""
 alias yt-mp4='yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" --check-formats'
 alias yt='yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" --check-formats'
-alias cw="swww img --transition-type random"
+alias cw="awww img --transition-type random"
 alias jinx='ollama run Jinx'
 alias play-noise="play -nq synth 3600 sin 20 gain -10"
 
 # Change wallpaper and apply matugen theme based on its colors
 # cw-theme() {
-#   swww img --transition-type random "$1"
+#   awww img --transition-type random "$1"
 #   matugen image "$1" --verbose --show-colors
 # }
 
