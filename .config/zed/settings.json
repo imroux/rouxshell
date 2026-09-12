@@ -1,0 +1,88 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)",
+  },
+  "cli_default_open_behavior": "existing_window",
+  "session": {
+    "trust_all_worktrees": true,
+  },
+
+  // --- UI & Appearance ---
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Gruvbox Dark Hard",
+  },
+
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "buffer_font_family": "Hack",
+  "buffer_font_fallbacks": ["Nerd Font"],
+  "buffer_line_height": "comfortable",
+
+  // --- Editor Mechanics ---
+  "tab_size": 2,
+  "preferred_line_length": 80,
+  "show_wrap_guides": true,
+  "wrap_guides": [80, 120],
+  "soft_wrap": "editor_width",
+  "ensure_final_newline_on_save": true,
+  "remove_trailing_whitespace_on_save": true,
+
+  // --- Vim Mode & Navigation ---
+  "vim_mode": true,
+  // "relative_line_numbers": "enabled",
+  "use_multiline_find": true,
+  "vertical_scroll_margin": 10,
+
+  // --- Features & Panels ---
+  "format_on_save": "on",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "project_panel": {
+    "dock": "left",
+    "default_width": 240,
+    "file_icons": true,
+    "folder_icons": true,
+  },
+
+  // --- Language-Specific Settings ---
+  "languages": {
+    "TypeScript": {
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--write"],
+        },
+      },
+    },
+    "Rust": {
+      "format_on_save": "on",
+      "formatter": "language_server",
+    },
+  },
+
+  // --- Language Server Protocol (LSP) Config ---
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": {
+          "command": "clippy",
+        },
+      },
+    },
+  },
+}
