@@ -10,7 +10,7 @@
   "icon_theme": {
     "mode": "dark",
     "light": "Zed (Default)",
-    "dark": "Zed (Default)",
+    "dark": "Catppuccin Mocha",
   },
   "cli_default_open_behavior": "existing_window",
   "session": {
@@ -21,7 +21,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Gruvbox Dark Hard",
+    "dark": "Catppuccin Mocha",
   },
 
   "ui_font_size": 16,
@@ -40,10 +40,10 @@
   "remove_trailing_whitespace_on_save": true,
 
   // --- Vim Mode & Navigation ---
-  "vim_mode": true,
+  "vim_mode": false,
   // "relative_line_numbers": "enabled",
-  "use_multiline_find": true,
-  "vertical_scroll_margin": 10,
+  // "use_multiline_find": true,
+  // "vertical_scroll_margin": 10,
 
   // --- Features & Panels ---
   "format_on_save": "on",
