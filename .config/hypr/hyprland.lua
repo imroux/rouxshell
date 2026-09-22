@@ -1,0 +1,8 @@
+require("conf.autostart")
+require("conf.input")
+require("conf.keybindings")
+require("conf.look_and_feel")
+require("conf.monitors")
+require("conf.variables")
+require("conf.windows_and_workplaces")
+-- require("conf.")
