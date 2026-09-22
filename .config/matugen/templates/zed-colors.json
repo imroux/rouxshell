@@ -1,0 +1,24 @@
+{
+  "$schema": "https://zed.dev/schema/themes/v0.2.0.json",
+  "name": "Matugen Dynamic",
+  "themes": [
+    {
+      "name": "Matugen Dynamic",
+      "appearance": "dark",
+      "style": {
+        "border": "{{colors.outline.default.hex}}",
+        "background": "{{colors.surface.default.hex}}",
+        "element.background": "{{colors.surface_container.default.hex}}",
+        "text": "{{colors.on_surface.default.hex}}",
+        "text.muted": "{{colors.outline.default.hex}}",
+        "accent": "{{colors.primary.default.hex}}",
+        "syntax": {
+          "keyword": "{{colors.primary.default.hex}}",
+          "string": "{{colors.tertiary.default.hex}}",
+          "function": "{{colors.secondary.default.hex}}",
+          "variable": "{{colors.on_surface.default.hex}}"
+        }
+      }
+    }
+  ]
+}

@@ -17,23 +17,28 @@ post_hook = 'pkill -USR2 btop || true'
 [templates.cava]
 input_path = '~/.config/matugen/templates/cava-colors.ini'
 output_path = '~/.config/cava/themes/matugen'
-post_hook = 'pkill -USR1 cava'
+# post_hook = 'pkill -USR1 cava'
 
-[templates.ghostty]
-input_path = '~/.config/matugen/templates/ghostty'
-output_path = '~/.config/ghostty/themes/Matugen'
-post_hook = 'pkill -SIGUSR2 ghostty'
+# [templates.ghostty]
+# input_path = '~/.config/matugen/templates/ghostty'
+# output_path = '~/.config/ghostty/themes/Matugen'
+# post_hook = 'pkill -SIGUSR2 ghostty'
 
 [templates.gtk3]
 input_path = '~/.config/matugen/templates/gtk-colors.css'
 output_path = '~/.config/gtk-3.0/matugen-colors.css'
-post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+# post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+post_hook = "dconf write /org/gnome/desktop/interface/gtk-theme \"''\" && dconf write /org/gnome/desktop/interface/gtk-theme \"'adw-gtk3-dark'\""
 
 [templates.gtk4]
 input_path = '~/.config/matugen/templates/gtk-colors.css'
 output_path = '~/.config/gtk-4.0/matugen-colors.css'
 
-[templates.hyprland]
+[templates.hyprland-lua]
+input_path = '~/.config/matugen/templates/hyprland.lua'
+output_path = '~/.config/hypr/themes/matugen-colors.lua'
+
+[templates.hyprland-conf] # For hyprlock
 input_path = '~/.config/matugen/templates/hyprland.conf'
 output_path = '~/.config/hypr/themes/matugen-colors.conf'
 
@@ -42,18 +47,18 @@ input_path = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/themes/Matugen.conf'
 post_hook = "kitty +kitten themes --reload-in=all Matugen"
 
-[templates.color-scheme]
-input_path = '~/.config/matugen/templates/Matugen.colors'
-output_path = '~/.local/share/color-schemes/Matugen.colors'
-post_hook = 'systemctl --user restart plasma-xdg-desktop-portal-kde' # Apply changes to kde file picker
+# [templates.color-scheme]
+# input_path = '~/.config/matugen/templates/Matugen.colors'
+# output_path = '~/.local/share/color-schemes/Matugen.colors'
+# post_hook = 'systemctl --user restart plasma-xdg-desktop-portal-kde' # Apply changes to kde file picker
 
-[templates.qt5ct]
-input_path = '~/.config/matugen/templates/qtct-colors.conf'
-output_path = '~/.config/qt5ct/colors/matugen.conf'
+# [templates.qt5ct]
+# input_path = '~/.config/matugen/templates/qtct-colors.conf'
+# output_path = '~/.config/qt5ct/colors/matugen.conf'
 
-[templates.qt6ct]
-input_path = '~/.config/matugen/templates/qtct-colors.conf'
-output_path = '~/.config/qt6ct/colors/matugen.conf'
+# [templates.qt6ct]
+# input_path = '~/.config/matugen/templates/qtct-colors.conf'
+# output_path = '~/.config/qt6ct/colors/matugen.conf'
 
 [templates.quickshell]
 input_path = '~/.config/matugen/templates/quickshell.qml'
