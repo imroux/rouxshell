@@ -127,6 +127,17 @@ alias bashupd='. ~/.bashrc'
 alias zshconfig='nvim ~/.config/zsh'
 alias zshupd='. ~/.zshrc'
 
+# NixOS
+alias nrs='sudo nixos-rebuild switch'
+alias nhs='home-manager switch'
+
+# Network Manager CLI
+alias nmlist='nmcli device wifi list'
+
+nmconnect() {
+  nmcli device wifi connect $1 password $2
+}
+
 # Miscellaneous
 alias ls='lsd -a --group-directories-first'
 alias ll='lsd -la --group-directories-first'
@@ -139,13 +150,14 @@ alias pksysset='pkill -f systemsettings' # kill KDE settings app in case it gets
 alias nvidia-watch='watch -n 0.5 nvidia-smi'
 alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg" # Arch
 # alias grub-update="sudo grub2-mkconfig -o /boot/grub2/grub.cfg" # Fedora
-alias mirrors-rank="sudo reflector --verbose --latest 5 --country 'Sweden' --age 6 --sort rate --save /etc/pacman.d/mirrorlist"
+alias mirrors-rank="sudo reflector --verbose --latest 5 --country 'Sweden' --age 6 --sort rate --save /etc/pacman.d/mirrorlist" # Rank repository mirrors by speed on Arch
 alias gpu-driver-check="lspci -nnk | egrep -i --color 'vga|3d|2d' -A3"
 alias touchpad-fix='xinput set-prop "ELAN0711:00 04F3:30EB Touchpad" "libinput Tapping Enabled" 1'
 # alias root-snapshot='sudo btrfs subvolume snapshot / /.snapshots/@-$(date +"%Y-%m-%d--%H:%M:%S") && sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias root-snapshot='sudo btrfs subvolume snapshot / /.snapshots/@-$(date +"%Y-%m-%d--%H:%M:%S")' # if not using grub
 alias v='nvim'
 alias sudov='sudo nvim'
+alias zed='zeditor'
 alias yt-mp3="yt-dlp --extract-audio --audio-format mp3 --add-metadata --embed-thumbnail -o \"%(title)s.%(ext)s\"" # Pass YT link in double quotes aka "https://..."
 alias yt-mp3-square="yt-dlp --extract-audio --audio-format mp3 --add-metadata --embed-thumbnail --ppa 'EmbedThumbnail+ffmpeg_o:-c:v mjpeg -vf crop=\"'\"'\"'if(gt(ih,iw),iw,ih)'\"':'\"'if(gt(iw,ih),ih,iw)'\"'\"'\"' -o \"%(title)s.%(ext)s\"" # Pass YT link in double quotes aka "https://..."
 alias yt-thumbnail="yt-dlp --skip-download --write-thumbnail --convert-thumbnails png -o \"%(title)s.%(ext)s\""
@@ -155,6 +167,7 @@ alias yt='yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" --check-formats'
 alias cw="awww img --transition-type random"
 alias jinx='ollama run Jinx'
 alias play-noise="play -nq synth 3600 sin 20 gain -10"
+alias ff="fastfetch"
 
 # Change wallpaper and apply matugen theme based on its colors
 # cw-theme() {
