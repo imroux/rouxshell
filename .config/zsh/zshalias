@@ -121,10 +121,10 @@ alias aptfix='sudo rm /var/lib/pacman/db.lck' # Removes pacman lock
 # alias aptq='dnf repoquery --userinstalled | rg' # search among installed packages
 
 # Bash/Zsh
-alias bashconfig='nvim ~/.bashrc'
+alias bashconfig='zeditor ~/.bashrc'
 alias bashupd='. ~/.bashrc'
 
-alias zshconfig='nvim ~/.config/zsh'
+alias zshconfig='zeditor ~/.config/zsh'
 alias zshupd='. ~/.zshrc'
 
 # NixOS

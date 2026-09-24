@@ -188,29 +188,11 @@ ex=:\
 *.nix=:\
 "
 
-if [ -d "$HOME/bin" ] ;
-  then PATH="$HOME/bin:$PATH"
-fi
-
-if [ -d "$HOME/.local/bin" ] ;
-  then PATH="$HOME/.local/bin:$PATH"
-fi
-
-# Add all directories directly inside $HOME/.local/bin to the PATH
-if [ -d "$HOME/.local/bin" ] ;
-  then PATH="$PATH:${$(find ~/.local/bin -maxdepth 1 -type d -printf %p:)%%:}"
-fi
-
-if [ -d "/opt/cuda/bin" ] ;
-  then PATH="/opt/cuda/bin:$PATH"
-fi
-
-if [ -d "$HOME/.cargo/bin" ] ;
-  then PATH="$HOME/.cargo/bin:$PATH"
-fi
-
 if [ -d "/sbin" ] ;
   then PATH="/sbin:$PATH"
+fi
+if [ -d "/opt/cuda/bin" ] ;
+  then PATH="/opt/cuda/bin:$PATH"
 fi
 
 if [ -d "/var/lib/flatpak/exports/share/applications" ] ;
@@ -219,6 +201,22 @@ fi
 
 if [ -d "$HOME/.deno/bin" ] ;
   then PATH="$HOME/.deno/bin:$PATH"
+fi
+
+if [ -d "$HOME/bin" ] ;
+  then PATH="$HOME/bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ;
+  then PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "$HOME/.config/emacs/bin" ] ;
+  then PATH="$HOME/.config/emacs/bin:$PATH"
+fi
+
+if [ -d "$HOME/.cargo/bin" ] ;
+  then PATH="$HOME/.cargo/bin:$PATH"
 fi
 
 # pnpm
