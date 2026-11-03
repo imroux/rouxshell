@@ -52,19 +52,19 @@ hl.window_rule({
 -- WORKSPACE RULES
 -- =============================================================================
 -- Bind workspaces 1-9 to HDMI-A-1, with workspace 1 as default
-for i = 1, 9 do
-  hl.workspace_rule({
-    workspace = i,
-    monitor = "HDMI-A-1",
-    default = (i == 1) or nil
-  })
-end
-
+-- for i = 1, 9 do
+--   hl.workspace_rule({
+--     workspace = i,
+--     monitor = "HDMI-A-1",
+--     default = (i == 1) or nil
+--   })
+-- end
+--
 -- Bind workspace 10 to internal monitor
-hl.workspace_rule({
-  workspace = 10,
-  monitor = "eDP-1"
-})
+-- hl.workspace_rule({
+--   workspace = 10,
+--   monitor = "eDP-1"
+-- })
 
 -- =============================================================================
 -- WINDOW RULES
@@ -100,6 +100,7 @@ local large_centered_dialog = {
 local dialog_classes = {
   ".blueman-manager-wrapped",
   "org.pulseaudio.pavucontrol",
+  "nm-connection-editor",
   "file-png", "file-jpg", "file-jpeg", "file-webp",
   "org.freedesktop.impl.portal.desktop.kde"
 }

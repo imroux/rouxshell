@@ -18,7 +18,7 @@ hl.on("hyprland.start", function ()
   -- hl.exec_cmd("~/.config/quickshell/quickshell-restart.sh")
 
   -- Fix wifi shutting down when laptop lid opens
-  hl.exec_cmd("uwsm app -- bash -c 'sudo /etc/rc.d/rc.local'")
+  -- hl.exec_cmd("uwsm app -- bash -c 'sudo /etc/rc.d/rc.local'")
 
   -- Fix dolphin mimetypes associations
   hl.exec_cmd("uwsm app -- dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=Hyprland")

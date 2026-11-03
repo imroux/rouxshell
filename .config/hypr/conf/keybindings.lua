@@ -2,7 +2,7 @@
 -- Set programs that you use
 local terminal    = "kitty"
 local fileManager = "nautilus"
-local menu        = "hyprlauncher"
+local menu        = "rofi -show drun"
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
@@ -19,10 +19,9 @@ hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("gimp"))
 hl.bind(mainMod .. " + SHIFT + G", hl.dsp.exec_cmd("hyprpicker -ra"))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("obsidian --disable-gpu"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("pavucontrol -t 3"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("nm-connection-editor"))
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd("blueman-manager"))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("AmneziaVPN"))
-hl.bind("F12", hl.dsp.exec_cmd("wtype -k escape"))
-hl.bind("F11", hl.dsp.exec_cmd("wtype -k F2"))
 
 local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
@@ -37,6 +36,9 @@ hl.bind(mainMod .. " + CTRL + P", hl.dsp.window.pin())
 hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m output -m active -s -o $HOME/Data/My/Screenshots"))
 hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m window -m active -s -o $HOME/Data/My/Screenshots"))
 hl.bind("CTRL + PRINT", hl.dsp.exec_cmd("hyprshot -m region --freeze -s -o $HOME/Data/My/Screenshots"))
+
+-- Exit Hyprland
+hl.bind("CTRL + ALT + DELETE", hl.dsp.exec_cmd("uwsm stop"))
 
 -- Layout switch
 local function safe_layout_msg(target_layout, msg)
