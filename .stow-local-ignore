@@ -1,4 +1,5 @@
 assets
+nix-config
 LICENSE
 README.md
 .gitignore
