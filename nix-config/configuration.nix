@@ -135,8 +135,6 @@ in
 
   security.sudo.wheelNeedsPassword = false;
 
-  programs.zsh.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -201,6 +199,12 @@ in
       pygobject3
     ]))
   ];
+
+  programs = {
+    zsh.enable = true;
+    gnome-disks.enable = true;
+    amnezia-vpn.enable = true;
+  };
 
   # Fonts
   fonts.packages = with pkgs; [

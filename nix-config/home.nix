@@ -9,8 +9,6 @@ in
 
   home.stateVersion = "26.05";
 
-  # Let Home Manager install and manage itself
-  programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
     # CLI Tools
@@ -57,13 +55,14 @@ in
     # Miscelleneous
     nautilus
     keepassxc
-    # telegram-desktop
-    amnezia-vpn
+    telegram-desktop
     obsidian
   ];
 
-  # Firefox setup
-  programs.firefox.enable = true;
+  programs = {
+    firefox.enable = true;
+    home-manager.enable = true;
+  };
 
   # Configure Hyprland Window Manager
   wayland.windowManager.hyprland = {
