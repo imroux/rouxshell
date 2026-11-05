@@ -16,6 +16,8 @@ in
     btop
     fastfetch
     tmux
+    spotdl
+    yt-dlp
 
     # Development
     zed-editor
@@ -41,16 +43,14 @@ in
     hypridle
     hyprcursor
     hyprpicker
-    # xdg-desktop-portal-hyprland
+    hyprutils
 
     # Media
     gimp3
     loupe
     mcomix
-    mpd
     mpv
     rmpc
-    mpc
 
     # Miscelleneous
     nautilus
@@ -107,6 +107,29 @@ in
     enable = true;
     allowImages = true; # Set to false if you only want to save text history
   };
+
+#   services.mpd = {
+#     enable = true;
+#     startWhenNeeded = false;
+#
+#     # 1. Set the base directory where MPD will naturally house database & state
+#     dataDir = "${config.home.homeDirectory}/.local/share/mpd";
+#
+#     # 2. Replicate your music and playlists directories
+#     musicDirectory = "${config.home.homeDirectory}/Data/Media/Music";
+#     playlistDirectory = "${config.home.homeDirectory}/.local/share/mpd/playlists";
+#
+#     # 3. Use settings (or extraConfig) to specifically hardcode the exact filenames
+#     # so they perfectly match your Arch Touch script
+#     settings = {
+#       database = "${config.home.homeDirectory}/.local/share/mpd/database";
+#       state_file = "${config.home.homeDirectory}/.local/share/mpd/state";
+#       sticker_file = "${config.home.homeDirectory}/.local/share/mpd/sticker.sql";
+#     };
+#   };
+#
+#   # Automatically trigger 'mpc update' right after systemd starts MPD
+#   systemd.user.services.mpd.Service.ExecStartPost = "${pkgs.mpc-cli}/bin/mpc update";
 
   # Environment Variables
   home.sessionVariables = {

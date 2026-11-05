@@ -122,7 +122,7 @@ in
   users.users."roux" = {
     isNormalUser = true;
     description = "Roux";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "mpd" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
     #  thunderbird
@@ -148,7 +148,10 @@ in
     starship
     lsd
     ripgrep
-
+    bat
+    cava
+    mpd
+    mpc
     neovim
     yazi
 
@@ -275,6 +278,19 @@ in
         ${pkgs.kbd}/bin/setkeycodes e058 142
       '';
     };
+  };
+
+  # MPD setup
+  services.mpd = {
+    enable = true;
+    settings.music_directory = "/home/roux/Data/Media/Music";
+
+    startWhenNeeded = true;
+  };
+
+  # Crucial for PipeWire: Bridge the system service to your user runtime environment
+  systemd.services.mpd.environment = {
+    XDG_RUNTIME_DIR = "/run/user/1000";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
