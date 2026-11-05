@@ -21,6 +21,7 @@ in
 
     # Development
     zed-editor
+    meld
 
     # Browsers
     librewolf
@@ -57,6 +58,7 @@ in
     keepassxc
     telegram-desktop
     obsidian
+    filezilla
   ];
 
   programs = {
