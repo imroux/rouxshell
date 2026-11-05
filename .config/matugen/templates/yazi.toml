@@ -23,7 +23,7 @@ count_selected = { fg = "{{colors.on_primary.default.hex}}", bg = "{{colors.tert
 
 # Border
 border_symbol = "│"
-border_style  = { fg = "{{colors.surface_tint.default.hex}}" }
+border_style = { fg = "{{colors.surface_tint.default.hex}}" }
 
 [status]
 separator_open = "🭁"
@@ -33,15 +33,15 @@ separator_style = { bg = "{{colors.on_primary.default.hex}}", fg = "#F4A261" }
 [mode]
 # Mode
 normal_main = { bg = "{{colors.primary.default.hex}}", fg = "{{colors.on_primary.default.hex}}", bold = true }
-normal_alt  = { bg = "{{colors.surface_variant.default.hex}}", fg = "{{colors.on_surface_variant.default.hex}}" }
+normal_alt = { bg = "{{colors.surface_variant.default.hex}}", fg = "{{colors.on_surface_variant.default.hex}}" }
 
 # Select mode
 select_main = { bg = "{{colors.secondary.default.hex}}", fg = "{{colors.on_secondary.default.hex}}", bold = true }
-select_alt  = { bg = "{{colors.surface_variant.default.hex}}", fg = "{{colors.on_surface_variant.default.hex}}" }
+select_alt = { bg = "{{colors.surface_variant.default.hex}}", fg = "{{colors.on_surface_variant.default.hex}}" }
 
 # Unset mode
 unset_main = { bg = "{{colors.tertiary.default.hex}}", fg = "{{colors.on_tertiary.default.hex}}", bold = true }
-unset_alt  = { bg = "{{colors.surface_variant.default.hex}}", fg = "{{colors.on_surface_variant.default.hex}}" }
+unset_alt = { bg = "{{colors.surface_variant.default.hex}}", fg = "{{colors.on_surface_variant.default.hex}}" }
 
 # Progress
 progress_label = { bold = true }
@@ -107,12 +107,12 @@ rules = [
   { mime = "application/{pdf,doc,rtf}", fg = "#a6e3a1" },
 
   # Special files
-  { name = "*", is = "orphan", bg = "{{colors.error_container.default.hex}}" },
-  { name = "*", is = "exec", fg = "{{colors.on_error_container.default.hex}}" },
+  { url = "*", is = "orphan", bg = "{{colors.error_container.default.hex}}" },
+  { url = "*", is = "exec", fg = "{{colors.on_error_container.default.hex}}" },
 
   # Fallback
-  { name = "*", fg = "{{colors.on_surface.default.hex}}" },
-  { name = "*/", fg = "{{colors.surface_tint.default.hex}}" },
+  { url = "*", fg = "{{colors.on_surface.default.hex}}" },
+  { url = "*/", fg = "{{colors.surface_tint.default.hex}}" },
 ]
 
 [icon]

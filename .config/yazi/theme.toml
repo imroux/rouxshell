@@ -23,7 +23,7 @@ count_selected = { fg = "#003545", bg = "#c5c3ea" }
 
 # Border
 border_symbol = "│"
-border_style  = { fg = "#89d0ee" }
+border_style = { fg = "#89d0ee" }
 
 [status]
 separator_open = "🭁"
@@ -33,15 +33,15 @@ separator_style = { bg = "#003545", fg = "#F4A261" }
 [mode]
 # Mode
 normal_main = { bg = "#89d0ee", fg = "#003545", bold = true }
-normal_alt  = { bg = "#40484c", fg = "#c0c8cc" }
+normal_alt = { bg = "#40484c", fg = "#c0c8cc" }
 
 # Select mode
 select_main = { bg = "#b4cad5", fg = "#1e333c", bold = true }
-select_alt  = { bg = "#40484c", fg = "#c0c8cc" }
+select_alt = { bg = "#40484c", fg = "#c0c8cc" }
 
 # Unset mode
 unset_main = { bg = "#c5c3ea", fg = "#2d2d4d", bold = true }
-unset_alt  = { bg = "#40484c", fg = "#c0c8cc" }
+unset_alt = { bg = "#40484c", fg = "#c0c8cc" }
 
 # Progress
 progress_label = { bold = true }
@@ -107,12 +107,12 @@ rules = [
   { mime = "application/{pdf,doc,rtf}", fg = "#a6e3a1" },
 
   # Special files
-  { name = "*", is = "orphan", bg = "#93000a" },
-  { name = "*", is = "exec", fg = "#ffdad6" },
+  { url = "*", is = "orphan", bg = "#93000a" },
+  { url = "*", is = "exec", fg = "#ffdad6" },
 
   # Fallback
-  { name = "*", fg = "#dee3e6" },
-  { name = "*/", fg = "#89d0ee" },
+  { url = "*", fg = "#dee3e6" },
+  { url = "*/", fg = "#89d0ee" },
 ]
 
 [icon]
