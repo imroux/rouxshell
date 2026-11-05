@@ -1,7 +1,7 @@
 [Added Associations]
-application/epub+zip=com.github.johnfactotum.Foliate.desktop;
+application/epub+zip=mcomix.desktop;
 application/json=code-oss.desktop;
-application/pdf=org.kde.okular.desktop;
+application/pdf=mcomix.desktop;
 application/vnd.comicbook+zip=mcomix.desktop;
 application/vnd.comicbook-rar=mcomix.desktop;
 application/vnd.ms-excel.sheet.macroEnabled.12=libreoffice-calc.desktop;
@@ -39,9 +39,9 @@ x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
 
 [Default Applications]
-application/epub+zip=com.github.johnfactotum.Foliate.desktop;
+application/epub+zip=mcomix.desktop;
 application/json=code-oss.desktop;
-application/pdf=org.kde.okular.desktop;
+application/pdf=mcomix.desktop;
 application/vnd.comicbook+zip=mcomix.desktop;
 application/vnd.comicbook-rar=mcomix.desktop;
 application/vnd.ms-excel.sheet.macroEnabled.12=libreoffice-calc.desktop;
