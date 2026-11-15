@@ -9,7 +9,6 @@ in
 
   home.stateVersion = "26.05";
 
-
   home.packages = with pkgs; [
     # CLI Tools
     kitty
