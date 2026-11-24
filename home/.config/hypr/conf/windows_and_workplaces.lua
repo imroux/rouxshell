@@ -143,6 +143,10 @@ hl.window_rule({ match = { class = "^(qalculate-gtk)$" }, float = true, center =
 hl.window_rule({ match = { class = "^(Brave)$" }, center = true })
 hl.window_rule({ match = { class = "^()$", title = "^(Open File)$" }, center = true })
 hl.window_rule({ match = { title = "Google" }, size = "monitor_w*0.8 monitor_h*0.8", center = true })
+hl.window_rule({ match = { title = "^(Sign in*)$" }, float = true, center = true })
+hl.window_rule({ match = { title = "^(Sign in with Google.*)$" }, float = true, center = true })
+hl.window_rule({ match = { title = "^(Choose an account.*)$" }, float = true, center = true })
+hl.window_rule({ match = { class = "^(blueman-manager)$" }, size = "monitor_w*0.8 monitor_h*0.8", float = true, center = true })
 
 -- Tile Windows
 hl.window_rule({ match = { title = "Gitnuro" }, tile = true })
