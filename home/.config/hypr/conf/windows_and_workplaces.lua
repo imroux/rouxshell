@@ -1,7 +1,7 @@
 local suppressMaximizeRule = hl.window_rule({
   -- Ignore maximize requests from all apps. You'll probably like this.
-  name  = "suppress-maximize-events",
-  match = { class = ".*" },
+  name           = "suppress-maximize-events",
+  match          = { class = ".*" },
 
   suppress_event = "maximize",
 })
@@ -9,8 +9,8 @@ local suppressMaximizeRule = hl.window_rule({
 
 hl.window_rule({
   -- Fix some dragging issues with XWayland
-  name  = "fix-xwayland-drags",
-  match = {
+  name     = "fix-xwayland-drags",
+  match    = {
     class      = "^$",
     title      = "^$",
     xwayland   = true,
@@ -113,22 +113,24 @@ local dialog_titles = {
 }
 
 for _, class in ipairs(dialog_classes) do
-  hl.window_rule({ match = { class = "^(" .. class .. ")$" }, float = large_centered_dialog.float, size = large_centered_dialog.size, center = large_centered_dialog.center })
+  hl.window_rule({ match = { class = "^(" .. class .. ")$" }, float = large_centered_dialog.float, size =
+  large_centered_dialog.size, center = large_centered_dialog.center })
 end
 
 for _, title in ipairs(dialog_titles) do
-  hl.window_rule({ match = { title = title }, float = large_centered_dialog.float, size = large_centered_dialog.size, center = large_centered_dialog.center })
+  hl.window_rule({ match = { title = title }, float = large_centered_dialog.float, size = large_centered_dialog.size, center =
+  large_centered_dialog.center })
 end
 
 -- Generic Float Window Rules
 local float_only_rules = {
-  { class = "^()$", title = "^(Save File)$" },
-  { class = "^()$", title = "^(Open File)$" },
+  { class = "^()$",                                                                                                     title = "^(Save File)$" },
+  { class = "^()$",                                                                                                     title = "^(Open File)$" },
   { class = "^(xdg-desktop-portal-gtk|xdg-desktop-portal-kde|xdg-desktop-portal-hyprland)(.*)$" },
   { class = "^(polkit-gnome-authentication-agent-1|hyprpolkitagent|org.org.kde.polkit-kde-authentication-agent-1)(.*)$" },
   { class = "^(CachyOSHello)$" },
   { class = "^(zenity)$" },
-  { class = "^()$", title = "^(Steam - Self Updater)$" },
+  { class = "^()$",                                                                                                     title = "^(Steam - Self Updater)$" },
   { title = "^(imv|mpv|danmufloat|termfloat|nemo|ncmpcpp)$" },
   { title = "File Operation Progress" }
 }
@@ -147,6 +149,7 @@ hl.window_rule({ match = { title = "^(Sign in*)$" }, float = true, center = true
 hl.window_rule({ match = { title = "^(Sign in with Google.*)$" }, float = true, center = true })
 hl.window_rule({ match = { title = "^(Choose an account.*)$" }, float = true, center = true })
 hl.window_rule({ match = { class = "^(blueman-manager)$" }, size = "monitor_w*0.8 monitor_h*0.8", float = true, center = true })
+hl.window_rule({ match = { class = "^(xdg-desktop-portal-gtk)$" }, size = "monitor_w*0.8 monitor_h*0.8", float = true, center = true })
 
 -- Tile Windows
 hl.window_rule({ match = { title = "Gitnuro" }, tile = true })
