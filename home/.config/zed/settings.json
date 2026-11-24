@@ -21,7 +21,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Catppuccin Mocha",
+    "dark": "One Dark",
   },
 
   "ui_font_size": 16,
@@ -52,10 +52,10 @@
     "metrics": false,
   },
   "project_panel": {
+    "folder_indicator": "icon",
     "dock": "left",
     "default_width": 240,
     "file_icons": true,
-    "folder_icons": true,
   },
 
   // --- Language-Specific Settings ---
