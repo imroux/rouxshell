@@ -4,7 +4,7 @@ gui:
   sidePanelWidth: 0.25
   expandFocusedSidePanel: true
   expandedSidePanelWeight: 5
-  useHunkModeInStagingView: false
+  useHunkModeInDiffView: false
   theme:
     defaultFgColor:
       - cyan
@@ -12,4 +12,3 @@ gui:
   nerdFontsVersion: "3"
   showBranchCommitHash: true
   showDivergenceFromBaseBranch: 'arrowAndNumber'
-
