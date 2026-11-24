@@ -28,7 +28,8 @@ output_path = '~/.config/cava/themes/matugen'
 input_path = '~/.config/matugen/templates/gtk-colors.css'
 output_path = '~/.config/gtk-3.0/matugen-colors.css'
 # post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
-post_hook = "dconf write /org/gnome/desktop/interface/gtk-theme \"''\" && dconf write /org/gnome/desktop/interface/gtk-theme \"'adw-gtk3-dark'\""
+# post_hook = "dconf write /org/gnome/desktop/interface/gtk-theme \"''\" && dconf write /org/gnome/desktop/interface/gtk-theme \"'adw-gtk3-dark'\""
+post_hook = "dconf write /org/gnome/desktop/interface/gtk-theme \"''\" && dconf write /org/gnome/desktop/interface/gtk-theme \"'adw-gtk3-dark'\" && systemctl --user restart xdg-desktop-portal-gtk.service"
 
 [templates.gtk4]
 input_path = '~/.config/matugen/templates/gtk-colors.css'
