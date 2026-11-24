@@ -1,9 +1,9 @@
 [mgr]
-cwd = { fg = "#dee3e6" }
+cwd = { fg = "#dfe3e8" }
 
 # Tab
-tab_active = { fg = "#003545", bg = "#89d0ee", bold = true }
-tab_inactive = { fg = "#bbeaff", bg = "#001f29" }
+tab_active = { fg = "#00344d", bg = "#94cdf7", bold = true }
+tab_inactive = { fg = "#c8e6ff", bg = "#001e2f" }
 tab_width = 1
 
 # Find
@@ -11,84 +11,84 @@ find_keyword = { fg = "#ffb4ab", bold = true, italic = true, underline = true }
 find_position = { fg = "#ffb4ab", bold = true, italic = true }
 
 # Marker
-marker_copied = { fg = "#8679ff", bg = "#8679ff" }
-marker_cut = { fg = "#e2dfff", bg = "#e2dfff" }
+marker_copied = { fg = "#a777ff", bg = "#a777ff" }
+marker_cut = { fg = "#e9ddff", bg = "#e9ddff" }
 marker_marked = { fg = "#ffb4ab", bg = "#ffb4ab" }
-marker_selected = { fg = "#c5c3ea", bg = "#c5c3ea" }
+marker_selected = { fg = "#cec0e8", bg = "#cec0e8" }
 
 # Count
-count_copied = { fg = "#181837", bg = "#e2dfff" }
-count_cut = { fg = "#181837", bg = "#e2dfff" }
-count_selected = { fg = "#003545", bg = "#c5c3ea" }
+count_copied = { fg = "#1f1635", bg = "#e9ddff" }
+count_cut = { fg = "#1f1635", bg = "#e9ddff" }
+count_selected = { fg = "#00344d", bg = "#cec0e8" }
 
 # Border
 border_symbol = "│"
-border_style = { fg = "#89d0ee" }
+border_style = { fg = "#94cdf7" }
 
 [status]
 separator_open = "🭁"
 separator_close = "🭠"
-separator_style = { bg = "#003545", fg = "#F4A261" }
+separator_style = { bg = "#00344d", fg = "#F4A261" }
 
 [mode]
 # Mode
-normal_main = { bg = "#89d0ee", fg = "#003545", bold = true }
-normal_alt = { bg = "#40484c", fg = "#c0c8cc" }
+normal_main = { bg = "#94cdf7", fg = "#00344d", bold = true }
+normal_alt = { bg = "#41474d", fg = "#c1c7ce" }
 
 # Select mode
-select_main = { bg = "#b4cad5", fg = "#1e333c", bold = true }
-select_alt = { bg = "#40484c", fg = "#c0c8cc" }
+select_main = { bg = "#b7c9d9", fg = "#21323f", bold = true }
+select_alt = { bg = "#41474d", fg = "#c1c7ce" }
 
 # Unset mode
-unset_main = { bg = "#c5c3ea", fg = "#2d2d4d", bold = true }
-unset_alt = { bg = "#40484c", fg = "#c0c8cc" }
+unset_main = { bg = "#cec0e8", fg = "#352b4b", bold = true }
+unset_alt = { bg = "#41474d", fg = "#c1c7ce" }
 
 # Progress
 progress_label = { bold = true }
-progress_normal = { fg = "#89d0ee", bg = "#353a3d" }
-progress_error = { fg = "#ffb4ab", bg = "#353a3d" }
+progress_normal = { fg = "#94cdf7", bg = "#353a3e" }
+progress_error = { fg = "#ffb4ab", bg = "#353a3e" }
 
 # Permissions
-permissions_t = { fg = "#56839a" }
-permissions_w = { fg = "#5752c2" }
+permissions_t = { fg = "#557ea2" }
+permissions_w = { fg = "#7750bf" }
 permissions_x = { fg = "#ff2b12" }
-permissions_r = { fg = "#5746ff" }
-permissions_s = { fg = "#22bbff" }
+permissions_r = { fg = "#8644ff" }
+permissions_s = { fg = "#2fa0ff" }
 
 [select]
-border = { fg = "#89d0ee" }
-active = { fg = "#c5c3ea", bold = true }
+border = { fg = "#94cdf7" }
+active = { fg = "#cec0e8", bold = true }
 inactive = {}
 
 [input]
-border = { fg = "#89d0ee" }
-value = { fg = "#dee3e6" }
+border = { fg = "#94cdf7" }
+value = { fg = "#dfe3e8" }
 
 [completion]
-border = { fg = "#89d0ee", bg = "#003545" }
+border = { fg = "#94cdf7", bg = "#00344d" }
 
 [tasks]
-border = { fg = "#89d0ee" }
+border = { fg = "#94cdf7" }
 title = {}
-hovered = { fg = "#e2dfff", underline = true }
+hovered = { fg = "#e9ddff", underline = true }
 
 [which]
 cols = 3
-mask = { bg = "#353a3d" }
-cand = { fg = "#89d0ee" }
-rest = { fg = "#003545" }
-desc = { fg = "#dee3e6" }
+mask = { bg = "#353a3e" }
+cand = { fg = "#94cdf7" }
+rest = { fg = "#00344d" }
+desc = { fg = "#dfe3e8" }
 separator = " ▶ "
-separator_style = { fg = "#dee3e6" }
+separator_style = { fg = "#dfe3e8" }
 
 [help]
-on = { fg = "#dee3e6" }
-run = { fg = "#dee3e6" }
-footer = { fg = "#1e333c", bg = "#b4cad5" }
+on = { fg = "#dfe3e8" }
+run = { fg = "#dfe3e8" }
+footer = { fg = "#21323f", bg = "#b7c9d9" }
 
 [notify]
-title_info = { fg = "#c5c3ea" }
-title_warn = { fg = "#89d0ee" }
+title_info = { fg = "#cec0e8" }
+title_warn = { fg = "#94cdf7" }
 title_error = { fg = "#ffb4ab" }
 
 [filetype]
@@ -111,8 +111,8 @@ rules = [
   { url = "*", is = "exec", fg = "#ffdad6" },
 
   # Fallback
-  { url = "*", fg = "#dee3e6" },
-  { url = "*/", fg = "#89d0ee" },
+  { url = "*", fg = "#dfe3e8" },
+  { url = "*/", fg = "#94cdf7" },
 ]
 
 [icon]
