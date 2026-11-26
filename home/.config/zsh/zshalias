@@ -89,7 +89,8 @@ alias buna='bun a'
 # alias aptfix='sudo rm /var/lib/pacman/db.lck' # Removes pacman lock
 
 alias aptu='yay -Syu --disable-download-timeout' # update package lists and upgrade all packages
-alias apti='yay -Sy --needed --disable-download-timeout' # install packages
+alias apti='yay -Sy --needed --noconfirm --disable-download-timeout' # install packages without confirmation
+alias aptic='yay -Sy --needed --disable-download-timeout' # install packages with confirmation
 alias apts='yay --disable-download-timeout' # search for a package (intersection of all words if multiple suplied). Promts to install a package as well
 alias aptsg='yay -Sg' # lookup all packages belonging to a group
 alias aptr='yay -Rns --noconfirm' # remove packages
@@ -97,7 +98,7 @@ alias aptrr='yay -Rnusc --noconfirm' # remove packages with all dependencies and
 alias aptq='yay -Q | rg' # search among installed packages
 alias aptqq='yay -Qq | rg' # search among installed packages without package versions
 alias aptrq='yay -R $(yay -Qdtq)' # remove all packages that don't depend on any other
-alias aptsc='yay -Scc' # Clean cache and databases
+alias aptcc='yay -Scc' # Clean cache and databases
 alias aptfix='sudo rm /var/lib/pacman/db.lck' # Removes pacman lock
 
 # alias aptu='sudo pacman -Syu --disable-download-timeout --nocombinedupgrade' # update package lists and upgrade all packages
